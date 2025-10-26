@@ -1,6 +1,6 @@
-import InputView from "./InputView.js";
-import OutputView from "./OutputView.js";
-import RacingGame from "./RacingGame.js";
+import InputView from "./view/InputView.js";
+import OutputView from "./view/OutputView.js";
+import RacingGame from "./domain/RacingGame.js";
 import { Console } from "@woowacourse/mission-utils";
 
 class App {
@@ -16,7 +16,7 @@ class App {
       OutputView.printWinners(game.getWinners());
     } catch (error) {
       Console.print(`${error.message}`);
-      return Promise.reject(error);
+      throw error;
     }
   }
 }
